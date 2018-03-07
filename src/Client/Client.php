@@ -67,7 +67,7 @@ class Client implements ClientInterface
                             'comic' => '/{num}/info.0.json',
                         ],
                         'cache' => [
-                            'prefix' => '__Xkcd__',
+                            'prefix' => '__xkcd__',
                             'ttl' => 720,
                         ],
                     ],
