@@ -1,0 +1,42 @@
+{
+  "name": "sauls/xkcd-api-client",
+  "description": "Sauls Xkcd.com api client",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Saulius Vaičeliūnas",
+      "email": "saulius@vaiceliunas.lt"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "guzzlehttp/guzzle": "^6.0",
+    "symfony/cache": "^4.0",
+    "sauls/helpers": "^1.0",
+    "sauls/options-resolver": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sauls\\Component\\Xkcd\\Api\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "../tests"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sauls\\Component\\Xkcd\\Api\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "v1.x-dev"
+    }
+  }
+}

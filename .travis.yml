@@ -1,0 +1,36 @@
+language: php
+
+php:
+  - 7.2
+
+env:
+  global:
+    - COMPOSER_PREFER_LOWEST=false
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.2
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_install:
+  - mkdir -vp build/logs
+  - composer self-update
+
+install:
+  - composer update --prefer-source `if [[ $COMPOSER_PREFER_LOWEST = true ]]; then echo "--prefer-lowest --prefer-stable"; fi`
+
+script: phpunit --coverage-clover=build/logs/clover.xml
+
+after_success:
+  - travis_retry php vendor/bin/php-coveralls -v
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+
+notifications:
+  email: sauliuxas+dev@gmail.com
