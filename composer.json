@@ -1,6 +1,6 @@
 {
   "name": "sauls/xkcd-api-client",
-  "description": "Sauls Xkcd.com api client",
+  "description": "Sauls xkcd.com api client",
   "type": "library",
   "license": "MIT",
   "authors": [
